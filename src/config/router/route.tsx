@@ -1,5 +1,7 @@
+import CartPage from "@/cart/cart";
 import LandingPage from "../../landing-page/landing-page";
 import AppLayout from "../../layout";
+import Listing from "../../listing/listing";
 
 
 export type RouteType = {
@@ -14,6 +16,8 @@ export const routes: RouteType[] | any[] = [
         element: <AppLayout />,
         children: [
             { index: true, element: <LandingPage /> },
+            { path:"/shopping",  element: <Listing /> },
+            { path:"/cart",  element: <CartPage /> },
         ]
     },
 ];

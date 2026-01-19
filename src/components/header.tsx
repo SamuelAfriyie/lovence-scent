@@ -9,8 +9,9 @@ interface HeaderProps {
 const Header = ({ isScrolled }: HeaderProps) => {
     return (
         <header>
+            <NavBar variant='outline' className={cn('bg-transparent border-transparent fixed top-7 w-full text-white z-50 shadow-none', isScrolled && "hidden")} />
             <HeroCarousel />
-            <NavBar className={cn(isScrolled && 'fixed top-7 left-0 right-0 w-full mb-20')} />
+            <NavBar className={cn("w-full", isScrolled && 'fixed top-7 left-0 right-0 mb-20 z-50')} />
         </header>
     );
 };

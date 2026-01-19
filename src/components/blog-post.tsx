@@ -1,4 +1,4 @@
-import { ArrowRightCircle, ArrowRightCircleIcon } from 'lucide-react';
+import { ArrowRightCircle } from 'lucide-react';
 import React from 'react';
 
 // Define the structure for a blog post

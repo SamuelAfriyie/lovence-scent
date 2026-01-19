@@ -1,6 +1,7 @@
 import { NavLink, Link } from 'react-router-dom';
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { cn } from '../lib/utils';
+import { useCartStoreListener } from '@/lib/store/cart-store';
 
 interface NavBarProps {
     className?: string,
@@ -8,18 +9,20 @@ interface NavBarProps {
 }
 
 const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
+    const { count } = useCartStoreListener();
+
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/about' },
-        { name: 'Shop Online', path: '/shop' },
+        { name: 'About Us', path: '/#' },
+        { name: 'Shop Online', path: '/shopping' },
         { name: 'Products', path: '/products' },
-        { name: 'Blog', path: '/blog' },
-        { name: 'Contact Us', path: '/contact' },
+        { name: 'Blog', path: '/#' },
+        { name: 'Contact Us', path: '/#' },
     ];
 
     return (
         // < nav className="bg-white shadow-md border-b border-gray-200" >
-        < nav className={cn("bg-white shadow-md border-b border-gray-200 transition duration-300 hidden lg:inline-block", className)}>
+        < nav className={cn("bg-white shadow-sm border-b border-gray-200 transition duration-300 hidden lg:inline-block", className)}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
 
@@ -37,7 +40,7 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
                                     to={link.path}
                                     className={({ isActive }) =>
                                         cn("px-3 py-2 rounded-md text-sm font-bold transition-colors", isActive
-                                            ? variant === "outline"? 'text-shadow-white' : 'text-gray-900'
+                                            ? variant === "outline" ? 'text-shadow-white' : 'text-gray-900'
                                             : variant === "outline" ? 'text-white hover:text-white' : 'text-gray-500 hover:text-gray-900')
                                     }
                                 >
@@ -46,10 +49,25 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
                             ))}
 
                             {/* Cart Link/Icon */}
-                            <Link to="/cart" className="text-gray-500 hover:text-gray-900 px-3 py-2 flex items-center bg-gray-100 rounded-sm">
-                                <ShoppingCartIcon className='h-6 w-6' />
-                                <span className={cn('ml-1 text-sm font-medium')}>CART</span>
+                            <Link
+                                to="/cart"
+                                className="relative text-gray-500 hover:text-gray-900 px-3 py-2 flex items-center bg-gray-100 rounded-sm transition-all"
+                            >
+                                {/* The Icon */}
+                                <div className="relative">
+                                    <ShoppingCartIcon className='h-6 w-6' />
+
+                                    {/* The Badge */}
+                                    {count > 0 && (
+                                        <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white ring-2 ring-inset ring-white">
+                                            {count}
+                                        </span>
+                                    )}
+                                </div>
+
+                                <span className={cn('ml-3 text-sm font-medium')}>CART</span>
                             </Link>
+
                         </div>
                     </div>
 
