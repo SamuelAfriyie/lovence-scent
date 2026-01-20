@@ -5,15 +5,15 @@ import { MdAdd, MdRemove, MdDeleteOutline, MdArrowBack } from 'react-icons/md';
 
 const CartPage = () => {
     const { items, updateQty, removeItem } = useCartStoreListener();
-
+    const navigate = useNavigate();
     const subtotal = items.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const shipping = 50.00;
 
     return (
         <div className="bg-gray-50 min-h-screen pb-20">
-            <NavBar className={cn("w-full mt-7")} />
+            <NavBar className={cn("w-full mt-7 fixed left-0 z-50")} />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-                <div className="flex items-center gap-2 mb-8 cursor-pointer hover:text-blue-600 transition-colors w-fit">
+                <div className="flex items-center gap-2 mb-8 cursor-pointer hover:text-primary transition-colors w-fit lg:mt-20" onClick={() => navigate(-1)}>
                     <MdArrowBack size={20} />
                     <span className="font-medium">Continue Shopping</span>
                 </div>
@@ -25,7 +25,7 @@ const CartPage = () => {
                     {/* 1. SHOPPING LIST (Left Side) */}
                     <div className="lg:col-span-8 space-y-4">
                         {items.map((item) => (
-                            <div key={item.id} className="flex flex-row items-center bg-white p-4 rounded-xl ring-1 ring-inset ring-gray-200 hover:ring-2 hover:ring-black transition-all">
+                            <div key={item.id} className="flex flex-row items-center bg-white p-4 rounded-xl ring-1 ring-inset ring-gray-200 transition-all overflow-x-scroll">
                                 {/* Product Image */}
                                 <div className="h-24 w-24 bg-gray-50 rounded-lg shrink-0 overflow-hidden">
                                     <img src={item.imageUrl} alt={item.name} className="w-full h-full object-contain p-2 mix-blend-multiply" />
@@ -62,36 +62,7 @@ const CartPage = () => {
                     </div>
 
                     {/* 2. ORDER SUMMARY (Right Side) */}
-                    <div className="lg:col-span-4">
-                        {/* <div className="bg-white text-white p-8 rounded-2xl shadow-xl sticky top-10">
-                            <h2 className="text-xl font-bold mb-6 border-b border-gray-800 pb-4">Order Summary</h2>
-
-                            <div className="space-y-4 mb-8">
-                                <div className="flex justify-between text-gray-400">
-                                    <span>Subtotal</span>
-                                    <span className="text-white font-medium text-lg">GH₵{subtotal.toFixed(2)}</span>
-                                </div>
-                                <div className="flex justify-between text-gray-400">
-                                    <span>Delivery Estimate</span>
-                                    <span className="text-white font-medium">GH₵{shipping.toFixed(2)}</span>
-                                </div>
-                            </div>
-
-                            <div className="flex justify-between items-end border-t border-gray-800 pt-6 mb-8">
-                                <span className="text-gray-400 font-bold uppercase text-xs">Total Amount</span>
-                                <span className="text-3xl font-black text-white leading-none">
-                                    <span className="text-sm mr-1">GH₵</span>{(subtotal + shipping).toFixed(2)}
-                                </span>
-                            </div>
-
-                            <button className="w-full bg-white text-black py-4 rounded-full font-black text-lg hover:bg-blue-500 hover:text-white transition-all ring-inset ring-2 ring-white">
-                                CHECKOUT NOW
-                            </button>
-
-                            <p className="text-center text-[10px] text-gray-500 mt-6 uppercase tracking-tighter">
-                                Secure SSL Encryption • 7-Day Easy Returns
-                            </p>
-                        </div> */}
+                    <div className="lg:col-span-4 self-start lg:sticky top-28">
                         <OrderSummary subtotal={subtotal} shipping={shipping} />
                     </div>
                 </div>
@@ -104,6 +75,7 @@ export default CartPage;
 
 // import { useState } from 'react';
 import { MdShield, MdArrowForward } from 'react-icons/md';
+import { useNavigate } from 'react-router';
 
 const OrderSummary = ({ subtotal, shipping }: any) => {
     const total = subtotal + shipping;
@@ -143,15 +115,15 @@ const OrderSummary = ({ subtotal, shipping }: any) => {
                 </div>
 
                 {/* Main CTA */}
-                <button className="group w-full h-16 bg-black hover:bg-blue-600 text-white rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-blue-200 ring-inset ring-2 ring-transparent hover:ring-blue-400">
-                    <span className="font-black tracking-widest text-sm">PROCEED TO CHECKOUT</span>
+                <button className="group w-full h-16 bg-muted hover:bg-primary text-white rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-blue-200 ring-inset ring-2 ring-transparent hover:ring-primary/80">
+                    <span className="font-black tracking-widest text-sm">PROCEED TO ORDER</span>
                     <MdArrowForward className="group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
 
                 {/* Trust Badges */}
                 <div className="mt-8 flex items-center justify-center gap-6 py-4 bg-gray-50 rounded-2xl">
                     <div className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
-                        <MdShield className="text-blue-600" size={18} />
+                        <MdShield className="text-primary/80" size={18} />
                         <span className="text-[10px] font-black text-gray-600">SECURE PAYMENT</span>
                     </div>
                     <div className="h-4 w-px bg-gray-200" />

@@ -66,7 +66,7 @@ const BlogPostCard: React.FC<{ post: BlogPostData }> = ({ post }) => {
             </p>
 
             {/* Description: text color, leading (line height), font weight, margin, truncated to 3 lines */}
-            <p className="text-gray-900 leading-normal font-semibold mb-4 line-clamp-3">
+            <p className="text-muted leading-normal font-semibold mb-4 line-clamp-3">
                 {post.description}
             </p>
 
@@ -85,7 +85,7 @@ const BlogPostsSection: React.FC = () => {
         // Section Container: padding top/bottom
         <section className="py-12 bg-gray-50">
             {/* Section Title: center aligned, uppercase, bold, font size, bottom margin */}
-            <h2 className="text-center text-3xl font-bold uppercase mb-16 text-gray-900 tracking-wider">BLOG POSTS</h2>
+            <h2 className="text-center text-3xl font-bold uppercase mb-16 text-muted tracking-wider">BLOG POSTS</h2>
 
             {/* Posts Container: responsive grid (1 col default, 3 cols on medium screens and up), with gaps */}
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">

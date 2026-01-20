@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { cn } from '../lib/utils';
 import { useCartStoreListener } from '@/lib/store/cart-store';
+import logo from "../assets/logo.jpg";
 
 interface NavBarProps {
     className?: string,
@@ -13,11 +14,11 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/#' },
+        { name: 'About Us', path: '/about' },
         { name: 'Shop Online', path: '/shopping' },
-        { name: 'Products', path: '/products' },
-        { name: 'Blog', path: '/#' },
-        { name: 'Contact Us', path: '/#' },
+        // { name: 'Products', path: '/products' },
+        { name: 'Blog', path: '/blogs' },
+        { name: 'Contact Us', path: '/contact' },
     ];
 
     return (
@@ -27,8 +28,8 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
                 <div className="flex justify-between items-center h-20">
 
                     {/* Logo/Brand Area */}
-                    <div className="shrink-0 flex items-center">
-                        <span className="text-2xl font-bold text-gray-800">Your Logo</span>
+                    <div className="shrink-0 flex items-center "> 
+                            <img src={logo} sizes='12' className='size-14 rounded-full'/> 
                     </div>
 
                     {/* Navigation Links (Desktop/Tablet view) */}
@@ -39,9 +40,9 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
                                     key={link.name}
                                     to={link.path}
                                     className={({ isActive }) =>
-                                        cn("px-3 py-2 rounded-md text-sm font-bold transition-colors", isActive
-                                            ? variant === "outline" ? 'text-shadow-white' : 'text-gray-900'
-                                            : variant === "outline" ? 'text-white hover:text-white' : 'text-gray-500 hover:text-gray-900')
+                                        cn("px-3 py-2 rounded-md text-sm font-bold transition-colors ", isActive
+                                            ? variant === "outline" ? 'text-shadow-white' : 'text-primary'
+                                            : variant === "outline" ? 'text-white hover:text-white' : 'text-muted hover:text-primary')
                                     }
                                 >
                                     {link.name}
@@ -55,17 +56,17 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
                             >
                                 {/* The Icon */}
                                 <div className="relative">
-                                    <ShoppingCartIcon className='h-6 w-6' />
+                                    <ShoppingCartIcon className='h-6 w-6 text-primary' />
 
                                     {/* The Badge */}
                                     {count > 0 && (
-                                        <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white ring-2 ring-inset ring-white">
+                                        <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white ring-2 ring-inset ring-white">
                                             {count}
                                         </span>
                                     )}
                                 </div>
 
-                                <span className={cn('ml-3 text-sm font-medium')}>CART</span>
+                                <span className={cn('ml-3 text-sm font-medium text-primary')}>CART</span>
                             </Link>
 
                         </div>

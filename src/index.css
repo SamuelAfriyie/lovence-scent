@@ -23,13 +23,13 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
+  /* --primary: oklch(0.21 0.006 285.885); */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
+  /* --muted: oklch(0.967 0.001 286.375); */
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
+  /* --accent: oklch(0.967 0.001 286.375); */
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
@@ -48,6 +48,15 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  --primary: oklch(46.52% 0.102 191.07);
+  /* #0062B8 - Primary Blue */
+  --accent: oklch(76.89% 0.147 25.59);
+  /* #FFDA6C - Accent Gold */
+  --secondary: oklch(90.15% 0.015 248.86);
+  /* #DCE3EC - Background Light */
+  --muted: oklch(25.33% 0.093 252.68);
+  /* #002962 - Text Navy */
 }
 
 body {
@@ -133,6 +142,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

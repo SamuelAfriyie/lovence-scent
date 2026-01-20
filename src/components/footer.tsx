@@ -19,7 +19,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-800 text-white pt-12">
+        <footer className="bg-muted text-white pt-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
                 {/* Main Footer Grid */}

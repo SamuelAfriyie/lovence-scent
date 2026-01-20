@@ -21,10 +21,10 @@ const AboutUsSection = () => {
                     {/* Right Column: Text Content and Button */}
                     <div className="md:w-1/2 w-full">
                         {/* Section Title */}
-                        <h2 className="text-gray-800 text-2xl font-bold uppercase mb-4">ABOUT US</h2>
+                        <h2 className="text-muted text-2xl font-bold uppercase mb-4">ABOUT US</h2>
 
                         {/* Subheading */}
-                        <h3 className="text-gray-700 text-xl font-semibold mb-4">LOREM IPSUM IS SIMPLY DUMMY TEXT</h3>
+                        <h3 className="text-muted/80 text-xl font-semibold mb-4">LOREM IPSUM IS SIMPLY DUMMY TEXT</h3>
 
                         {/* Body Paragraph */}
                         <p className="text-gray-600 leading-relaxed mb-6 font-light">
@@ -32,7 +32,7 @@ const AboutUsSection = () => {
                         </p>
 
                         {/* Read More Button */}
-                        <button className="bg-white text-gray-800 border border-gray-300 px-8 py-3 rounded shadow hover:bg-gray-200 transition duration-300 font-semibold uppercase text-sm">
+                        <button className="bg-white text-gray-800 hover:text-primary border border-gray-300 px-8 py-3 rounded shadow transition duration-300 font-semibold uppercase text-sm cursor-pointer">
                             READ MORE
                         </button>
                     </div>

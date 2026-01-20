@@ -1,3 +1,4 @@
+import BottomSheet from "@/components/bottom-sheet";
 import { Filter } from "@/components/filter";
 import NavBar from "@/components/nav-bar";
 import { dummyProducts } from "@/components/popular-product-section";
@@ -11,20 +12,28 @@ const Listing = () => {
 
     return (
         <main className="bg-white min-h-screen flex flex-col ">
-            <NavBar className={cn("w-full mt-7")} />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <NavBar className={cn("w-full mt-7 fixed left-0 z-50")} />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full lg:mt-24 mb-16">
                 <header className="w-full my-12">
-                    <div className="w-full flex items-center">
-                        <h1 className="text-3xl text-black flex-1">Best-Selling Fragrances for Women & Men</h1>
-                        <aside className="px-4 py-2 ring ring-gray-300 space-x-2 flex md:hidden">
-                            <div className="size-6 rounded-full bg-gray-100 flex items-center justify-center"><p className="text-xs">5</p></div>
-                            <p className="font-bold">Filter</p>
-                        </aside>
+                    <div className="w-full flex items-center space-x-3">
+                        <h1 className="md:text-[27px] text-muted flex-1 text-xl">Best-Selling Fragrances for Women & Men</h1>
+                        {/* shows only on mobile screens */}
+                        <BottomSheet
+                            title="Filter Fragrances"
+                            trigger={
+                                <aside className="px-4 py-2 ring ring-gray-300 space-x-2 flex md:hidden">
+                                    <div className="size-6 rounded-full bg-gray-100 flex items-center justify-center"><p className="text-xs">5</p></div>
+                                    <p className="font-semibold text-muted hover:text-primary">Filter</p>
+                                </aside>
+                            }
+                        >
+                            <Filter />
+                        </BottomSheet>
                     </div>
                     <p className="dark:text-black">1-60 of 7072 Results</p>
                 </header>
-                <section className="flex w-full space-x-4">
-                    <aside className="md:w-75 hidden md:inline-block">
+                <section className="flex w-full space-x-4 items-start">
+                    <aside className="md:w-75 hidden md:inline-block lg:sticky lg:top-28 lg:self-start overflow-y-auto max-h-[calc(100vh-120px)]">
                         <p className="text-lg text-black">Filter By</p>
                         <Filter />
                     </aside>

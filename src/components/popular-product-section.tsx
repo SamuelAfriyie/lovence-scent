@@ -71,7 +71,7 @@ const PopularProductsSection = () => {
 
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 uppercase tracking-wider">
+          <h2 className="text-3xl font-bold text-muted uppercase tracking-wider">
             Popular Products
           </h2>
           {/* <div className="mt-4 h-1 w-20 bg-blue-600 mx-auto"></div> Blue separator line */}
@@ -81,10 +81,8 @@ const PopularProductsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {dummyProducts.map((product) => (
             <ProductCard
-              key={product.id}
-              name={product.name}
-              price={`${product.price}`}
-              imageUrl={product.imageUrl}
+              key={product.id} 
+              product={product} 
             />
           ))}
         </div>

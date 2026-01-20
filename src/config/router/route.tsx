@@ -16,8 +16,11 @@ export const routes: RouteType[] | any[] = [
         element: <AppLayout />,
         children: [
             { index: true, element: <LandingPage /> },
-            { path:"/shopping",  element: <Listing /> },
-            { path:"/cart",  element: <CartPage /> },
+            { path: "/shopping", element: <Listing /> },
+            { path: "/cart", element: <CartPage /> },
+            { path: "/blogs", element: <LandingPage /> },
+            { path: "/contact", element: <LandingPage /> },
+            { path: "/about", element: <LandingPage /> },
         ]
     },
 ];

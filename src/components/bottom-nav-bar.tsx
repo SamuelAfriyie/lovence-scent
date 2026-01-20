@@ -13,7 +13,7 @@ const BottomNavigationBar = ({ className }: { className?: string }) => {
         { name: 'Home', icon: HomeIcon, path: '/' },
         { name: 'Search', icon: MagnifyingGlassIcon, path: '/shopping' },
         { name: 'Cart', icon: ShoppingCartIcon, path: '/cart' },
-        { name: 'Blog', icon: BookCheck, path: '#' },
+        { name: 'Blog', icon: BookCheck, path: '/blogs' },
     ];
 
     return (
@@ -25,8 +25,8 @@ const BottomNavigationBar = ({ className }: { className?: string }) => {
                         to={item.path}
                         className={({ isActive }) =>
                             `relative flex flex-col items-center justify-center w-full h-full transition-colors duration-200 ${isActive
-                                ? 'text-blue-600'
-                                : 'text-gray-400 hover:text-blue-600'
+                                ? 'text-muted'
+                                : 'text-gray-400 hover:text-muted'
                             }`
                         }
                     >
@@ -36,7 +36,7 @@ const BottomNavigationBar = ({ className }: { className?: string }) => {
 
                             {/* Render badge only if item is 'Cart' and count > 0 */}
                             {item.name === 'Cart' && count > 0 && (
-                                <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[9px] font-black text-white ring-2 ring-white">
+                                <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[9px] font-black text-white ring-2 ring-white">
                                     {count}
                                 </span>
                             )}
@@ -46,7 +46,7 @@ const BottomNavigationBar = ({ className }: { className?: string }) => {
 
                         {/* Optional: Indicator bar for active state instead of border-t to avoid layout shift */}
                         <NavLink to={item.path} className={({ isActive }) =>
-                            cn("absolute top-0 h-0.5 w-8 bg-blue-600 transition-opacity", isActive ? "opacity-100" : "opacity-0")
+                            cn("absolute top-0 h-0.5 w-8 bg-muted transition-opacity", isActive ? "opacity-100" : "opacity-0")
                         } />
                     </NavLink>
                 ))}

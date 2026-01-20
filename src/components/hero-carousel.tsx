@@ -85,7 +85,7 @@ const HeroCarousel = () => {
                                     <p className="text-xl md:text-2xl mb-6">
                                         {slide.subtitle}
                                     </p>
-                                    <button className="border-white border text-white hover:text-gray-800 px-8 py-3 rounded shadow hover:bg-gray-100 transition duration-300 font-semibold uppercase cursor-pointer">
+                                    <button className="border-white border text-white hover:text-primary px-8 py-3 rounded shadow hover:bg-gray-100 transition duration-300 font-semibold uppercase cursor-pointer">
                                         LEARN MORE
                                     </button>
                                 </div>
