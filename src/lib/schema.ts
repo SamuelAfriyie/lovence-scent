@@ -1,9 +1,11 @@
 export type ProductSchema = {
     id: string | number,
     name: string,
-    brand: string,
     price: number,
-    imageUrl: string
+    imageUrl: string,
+    brand: string,
+    type: string,
+    gender: "unisex" | "men" | 'women'
 }
 
 export type CartItem = ProductSchema & {

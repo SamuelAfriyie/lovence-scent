@@ -1,0 +1,229 @@
+[
+    {
+        "id": 1,
+        "name": "GlowScents Oud Woody Scented Candle",
+        "price": 50.00,
+        "imageUrl": "/images/products/glowscents-oud-woody-candle.webp",
+        "brand": "GlowScents",
+        "type": "Scented Candle",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 2,
+        "name": "Lattafa Asad EDP 100ml",
+        "price": 389.99,
+        "imageUrl": "/images/products/lattafa-asad-edp-100ml.webp",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "male"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T10:00:00Z"
+    },
+    {
+        "id": 3,
+        "name": "Efolia Oud de Arabia EDP 100ml",
+        "price": 199.99,
+        "imageUrl": "/images/products/efolia-oud-de-arabia-edp-100ml.webp",
+        "brand": "Fragrance World",
+        "type": "Eau de Parfum",
+        "gender": [
+            "male",
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T11:00:00Z"
+    },
+    {
+        "id": 4,
+        "name": "Bodycology Fragrance Mists (Body Splashes) 237ml",
+        "price": 79.99,
+        "imageUrl": "/images/products/bodycology-fragrance-mists-body-splashes-237ml.webp",
+        "brand": "Bodycology",
+        "type": "Body Splash",
+        "gender": [
+            "male",
+            "unisex",
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T12:00:00Z"
+    },
+    {
+        "id": 5,
+        "name": "10ml Decant Lattafa Qaed Al Fursan(Black) EDP",
+        "price": 39.99,
+        "imageUrl": "/images/products/10ml-decant-lattafa-qaed-al-fursan-black-edp.webp",
+        "brand": "Lattafa",
+        "type": "Decant",
+        "gender": [
+            "male",
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T13:00:00Z"
+    },
+    {
+        "id": 6,
+        "name": "Lattafa Nebras EDP 100ml",
+        "price": 499.99,
+        "imageUrl": "/images/products/lattafa-nebras-edp-100ml.webp",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "male",
+            "unisex",
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T14:00:00Z"
+    },
+    {
+        "id": 7,
+        "name": "Lady Bella Body Mist 250ml",
+        "price": 35.00,
+        "imageUrl": "/images/products/lady-bella-body-mist-250ml.webp",
+        "brand": "Lady Bella",
+        "type": "Body Mist",
+        "gender": [
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 8,
+        "name": "Club De Nuit Intense Man Body Spray 200ml",
+        "price": 12.97,
+        "imageUrl": "/images/products/armaf-club-de-nuit-intense-man-body-spray-200ml.webp",
+        "brand": "Armaf",
+        "type": "Body Spray/Mist",
+        "gender": [
+            "male"
+        ],
+        "discount": 0,
+        "createdAt": "2024-01-21T02:08:00Z"
+    },
+    {
+        "id": 9,
+        "name": "Bodycology Cherry Blossom Fragrance Mist 237ml",
+        "price": 70.00,
+        "imageUrl": "/images/products/bodycology-cherry-blossom-fragrance-mist-237ml.jpg",
+        "brand": "Bodycology",
+        "type": "Fragrance Mist",
+        "gender": [
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 10,
+        "name": "Victoria’s Secret Love Spell Fragrance Mist 250ml",
+        "price": 120.00,
+        "imageUrl": "/images/products/victorias-secret-love-spell-fragrance-mist-250ml.webp",
+        "brand": "Victoria’s Secret",
+        "type": "Fragrance Mist",
+        "gender": [
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 11,
+        "name": "Victoria’s Secret Pure Seduction Fragrance Mist 250ml",
+        "price": 130.00,
+        "imageUrl": "/images/products/victorias-secret-pure-seduction-fragrance-mist-250ml.webp",
+        "brand": "Victoria’s Secret",
+        "type": "Fragrance Mist",
+        "gender": [
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 12,
+        "name": "Maison Yusif Supernova Fragrance 100ml",
+        "price": 1650.00,
+        "imageUrl": "/images/products/maison-yusif-supernova-fragrance-100ml.webp",
+        "brand": "Maison Yusif",
+        "type": "Eau de Parfum (Fragrance)",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 13,
+        "name": "Maison Yusif Leather To Excellence Fragrance 100ml",
+        "price": 1550.00,
+        "imageUrl": "/images/products/maison-yusif-leather-to-excellence-fragrance-100ml.webp",
+        "brand": "Maison Yusif",
+        "type": "Eau de Parfum (Fragrance)",
+        "gender": [
+            "male"
+        ],
+        "discount": 0,
+        "createdAt": "2023-01-21T02:08:00Z"
+    },
+    {
+        "id": 14,
+        "name": "Dear Body Japanese Cherry Blossom Perfume Oil 10ml",
+        "price": 28.50,
+        "imageUrl": "/images/products/dear-body-japanese-cherry-blossom-perfume-oil-10ml.webp",
+        "brand": "Dear Body",
+        "type": "Perfume Oil",
+        "gender": [
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 15,
+        "name": "Sweet Night First Love Shimmer Perfume 250ml",
+        "price": 56.00,
+        "imageUrl": "/images/products/sweet-night-first-love-shimmer-perfume-250ml.webp",
+        "brand": "Sweet Night",
+        "type": "Fragrance Mist",
+        "gender": [
+            "female"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 16,
+        "name": "Sweet Night Dream Man Body Spray 236ml",
+        "price": 56.00,
+        "imageUrl": "/images/products/sweet-night-dream-man-body-spray-236ml.webp",
+        "brand": "Sweet Night",
+        "type": "Body Spray",
+        "gender": [
+            "male"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 18,
+        "name": "Air Wick Essential Mist Starter Kit (Diffuser + Refill, Lavender & Almond Blossom) 20ml",
+        "price": 550.00,
+        "imageUrl": "/images/products/air-wick-essential-mist-starter-kit-lavender-almond-blossom.webp",
+        "brand": "Air Wick",
+        "type": "Automatic Diffuser Kit",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    }
+]

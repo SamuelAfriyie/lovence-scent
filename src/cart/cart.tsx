@@ -1,4 +1,5 @@
 import NavBar from '@/components/nav-bar';
+import { generateMultiProductWhatsAppLink } from '@/config/utils';
 import { useCartStoreListener } from '@/lib/store/cart-store';
 import { cn } from '@/lib/utils';
 import { MdAdd, MdRemove, MdDeleteOutline, MdArrowBack } from 'react-icons/md';
@@ -8,6 +9,12 @@ const CartPage = () => {
     const navigate = useNavigate();
     const subtotal = items.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const shipping = 50.00;
+
+
+    const handleOrder = () => {
+        const link = generateMultiProductWhatsAppLink(items);
+        window.open(link, '_blank');
+    }
 
     return (
         <div className="bg-gray-50 min-h-screen pb-20">
@@ -63,7 +70,7 @@ const CartPage = () => {
 
                     {/* 2. ORDER SUMMARY (Right Side) */}
                     <div className="lg:col-span-4 self-start lg:sticky top-28">
-                        <OrderSummary subtotal={subtotal} shipping={shipping} />
+                        <OrderSummary subtotal={subtotal} shipping={shipping} onOrder={handleOrder} />
                     </div>
                 </div>
             </div>
@@ -77,7 +84,7 @@ export default CartPage;
 import { MdShield, MdArrowForward } from 'react-icons/md';
 import { useNavigate } from 'react-router';
 
-const OrderSummary = ({ subtotal, shipping }: any) => {
+const OrderSummary = ({ subtotal, shipping, onOrder }: any) => {
     const total = subtotal + shipping;
 
     return (
@@ -115,8 +122,9 @@ const OrderSummary = ({ subtotal, shipping }: any) => {
                 </div>
 
                 {/* Main CTA */}
-                <button className="group w-full h-16 bg-muted hover:bg-primary text-white rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-blue-200 ring-inset ring-2 ring-transparent hover:ring-primary/80">
-                    <span className="font-black tracking-widest text-sm">PROCEED TO ORDER</span>
+                <button className="group w-full h-16 bg-muted hover:bg-primary text-white rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-blue-200 ring-inset ring-2 ring-transparent hover:ring-primary/80 cursor-pointer" onClick={onOrder}>
+                    <span className="font-black tracking-widest text-sm">Checkout via WhatsApp</span>
+                    {/* <span className="font-black tracking-widest text-sm">PROCEED TO ORDER</span> */}
                     <MdArrowForward className="group-hover:translate-x-1 transition-transform" size={20} />
                 </button>
 

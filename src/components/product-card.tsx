@@ -1,8 +1,8 @@
+import { generateWhatsAppLink } from '@/config/utils';
 import { useCartStoreListener } from '@/lib/store/cart-store';
 import { cn } from '@/lib/utils';
 import React from 'react';
 import { MdAddShoppingCart, MdStar, MdStarHalf, MdStarOutline } from "react-icons/md";
-import { useNavigate } from 'react-router';
 
 interface ProductProps {
   className?: string,
@@ -10,19 +10,18 @@ interface ProductProps {
 }
 
 const ProductCard: React.FC<ProductProps> = ({ className, product }) => {
-  const navigate = useNavigate();
   const { setItem, items } = useCartStoreListener();
 
   const isAddedToCart = items.find((p) => p.id === product.id);
 
-  const handleNavigate = () => {
-    navigate("/shopping");
+  const handleDirectOrder = () => {
+    const link = generateWhatsAppLink(product);
+    window.open(link, '_blank');
   }
 
   const handleAddToCart = () => {
     setItem(product);
   }
-
 
   return (
     <div className={cn(" p-4 transition duration-300", className)}>
@@ -35,7 +34,7 @@ const ProductCard: React.FC<ProductProps> = ({ className, product }) => {
         />
       </div>
       <div className="text-center flex flex-col items-center">
-        <h3 className="text-base font-semibold text-gray-600 mb-1 hover:underline hover:cursor-pointer" onClick={handleNavigate}>{product?.name} <br /><span className='font-sans'>By {product?.brand}</span></h3>
+        <h3 className="text-base font-semibold text-gray-600 mb-1 hover:underline hover:cursor-pointer" onClick={handleDirectOrder}>{product?.name} <br /><span className='font-sans'>By {product?.brand}</span></h3>
         <div className='w-full flex items-center space-x-4 justify-center'>
           <p className="text-xl font-black text-black"><span className='text-xs'>GH₵ </span>{product?.price?.toFixed(2)}</p>
           <button
@@ -64,7 +63,6 @@ export default ProductCard;
 
 export const ProductCardV2 = ({
   rating = 4.5,
-  discount = 20,
   viewMode = 'grid',
   className,
   product
@@ -84,6 +82,12 @@ export const ProductCardV2 = ({
     });
   };
 
+
+  const handleDirectOrder = () => {
+    const link = generateWhatsAppLink(product);
+    window.open(link, '_blank');
+  }
+
   const handleAddToCart = () => {
     setItem(product);
   }
@@ -95,9 +99,9 @@ export const ProductCardV2 = ({
       className
     )}>
       {/* Discount Badge */}
-      {discount > 0 && (
+      {product?.discount > 0 && (
         <span className="absolute top-2 left-2 bg-accent text-white text-[10px] font-bold font-serif px-2 py-1 rounded-full z-10">
-          -{discount}%
+          -{product?.discount}%
         </span>
       )}
 
@@ -124,9 +128,9 @@ export const ProductCardV2 = ({
           <span className="text-[11px] ml-1 text-gray-400">({rating})</span>
         </div>
 
-        <h3 className="text-base font-semibold text-gray-800 hover:underline cursor-pointer leading-tight">
+        <h3 className="text-base font-semibold text-gray-800 hover:underline cursor-pointer leading-tight" onClick={handleDirectOrder}>
           {product.name} <br />
-          <span className='font-sans text-sm text-gray-400 font-normal'>{"By Kelvin Klein"}</span>
+          <span className='font-sans text-sm text-gray-400 font-normal'>By {product?.brand}</span>
         </h3>
 
         <div className={cn(

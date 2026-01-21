@@ -1,9 +1,9 @@
 export const genderFilter = [
     {
-        id: 1, name: "Women",
+        id: 1, name: "Female",
     },
     {
-        id: 2, name: "Men",
+        id: 2, name: "Male",
     },
     {
         id: 3, name: "Unisex",

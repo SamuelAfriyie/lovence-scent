@@ -6,33 +6,25 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Badge } from "./ui/badge"
-import { brandsFilter, genderFilter, priceFilter, typesFilter } from "@/listing/data/data"
+import { genderFilter, priceFilter } from "@/listing/data/data"
+import { BrandItem, GenderItem, TypeItem } from "./filter-items"
 
-export function Filter() {
+interface FilterProps {
+    brandsFilter: string[],
+    typesFilter: string[],
+    onChange: (data: any) => void
+}
+
+export function Filter({ brandsFilter, typesFilter, onChange }: FilterProps) {
     return (
         <Accordion
             type="multiple"
             className="w-full"
             defaultValue={["item-1"]}
         >
-            <AccordionItem value="item-1">
-                <AccordionTrigger className="font-black text-lg hover:no-underline">Gender</AccordionTrigger>
-                <AccordionContent className="flex flex-row gap-4 text-balance">
-                    {genderFilter.map((gender) => (<Badge variant="outline" className="text-[18px] rounded-none hover:underline cursor-pointer">{gender?.name}</Badge>))}
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-                <AccordionTrigger className="font-black text-lg hover:no-underline">Brand</AccordionTrigger>
-                <AccordionContent className="flex flex-wrap gap-4 text-balance w-full">
-                    {brandsFilter.map((brand) => (<Badge variant="outline" className="text-[18px] rounded-none hover:underline cursor-pointer">{brand?.name}</Badge>))}
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-                <AccordionTrigger className="font-black text-lg hover:no-underline">Type</AccordionTrigger>
-                <AccordionContent className="flex flex-wrap gap-4 text-balance w-full">
-                    {typesFilter.map((type) => (<Badge variant="outline" className="text-[18px] rounded-none hover:underline cursor-pointer">{type?.name}</Badge>))}
-                </AccordionContent>
-            </AccordionItem>
+            <GenderItem genderFilter={genderFilter} onChange={onChange} />
+            <BrandItem brandFilter={brandsFilter} onChange={onChange} />
+            <TypeItem typefilter={typesFilter} onChange={onChange} />
             <AccordionItem value="item-4">
                 <AccordionTrigger className="font-black text-lg hover:no-underline"><p>Price  <span className="text-xs">(GH₵)</span></p></AccordionTrigger>
                 <AccordionContent className="flex flex-wrap gap-4 text-balance w-full">
@@ -42,4 +34,3 @@ export function Filter() {
         </Accordion>
     )
 }
-
