@@ -13,7 +13,7 @@ const BottomNavigationBar = ({ className }: { className?: string }) => {
         { name: 'Home', icon: HomeIcon, path: '/' },
         { name: 'Search', icon: MagnifyingGlassIcon, path: '/shopping' },
         { name: 'Cart', icon: ShoppingCartIcon, path: '/cart' },
-        { name: 'Blog', icon: BookCheck, path: '/blogs' },
+        { name: 'Blog', icon: BookCheck, path: '/#blog-post' },
     ];
 
     return (
@@ -25,29 +25,35 @@ const BottomNavigationBar = ({ className }: { className?: string }) => {
                         to={item.path}
                         className={({ isActive }) =>
                             `relative flex flex-col items-center justify-center w-full h-full transition-colors duration-200 ${isActive
-                                ? 'text-muted'
+                                ? (item.name === 'Blog' ? 'text-gray-400 hover:text-muted' : 'text-muted')
                                 : 'text-gray-400 hover:text-muted'
                             }`
                         }
                     >
-                        {/* Wrapper for the Icon and Badge */}
-                        <div className="relative">
-                            <item.icon className="h-6 w-6" />
+                        {({ isActive }) => (
+                            <>
+                                {/* Wrapper for the Icon and Badge */}
+                                <div className="relative">
+                                    <item.icon className="h-6 w-6" />
 
-                            {/* Render badge only if item is 'Cart' and count > 0 */}
-                            {item.name === 'Cart' && count > 0 && (
-                                <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[9px] font-black text-white ring-2 ring-white">
-                                    {count}
-                                </span>
-                            )}
-                        </div>
+                                    {/* Render badge only if item is 'Cart' and count > 0 */}
+                                    {item.name === 'Cart' && count > 0 && (
+                                        <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[9px] font-black text-white ring-2 ring-white">
+                                            {count}
+                                        </span>
+                                    )}
+                                </div>
 
-                        <span className="text-[10px] font-bold mt-1 uppercase tracking-tight">{item.name}</span>
+                                <span className="text-[10px] font-bold mt-1 uppercase tracking-tight">{item.name}</span>
 
-                        {/* Optional: Indicator bar for active state instead of border-t to avoid layout shift */}
-                        <NavLink to={item.path} className={({ isActive }) =>
-                            cn("absolute top-0 h-0.5 w-8 bg-muted transition-opacity", isActive ? "opacity-100" : "opacity-0")
-                        } />
+
+                                {/* Optional: Indicator bar for active state instead of border-t to avoid layout shift */}
+                                <div className={
+                                    cn("absolute top-0 h-0.5 w-8 bg-muted transition-opacity", isActive ?
+                                        (item.name === 'Blog' ? "opacity-0" : "opacity-100") : "opacity-0")
+                                } />
+                            </>
+                        )}
                     </NavLink>
                 ))}
             </div>

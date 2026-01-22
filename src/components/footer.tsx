@@ -1,13 +1,13 @@
 import * as lucideReact from 'lucide-react'; // Using lucide-react for diverse icons
-
+import logo from "../assets/logo.jpg";
 
 const Footer = () => {
     const quickLinks = [
         { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/about' },
-        { name: 'Products', path: '/products' },
-        { name: 'Services', path: '/services' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'About Us', path: '/#about' },
+        { name: 'Shop Online', path: '/shopping' },
+        { name: 'Blog', path: '/#blog-post' },
+        { name: 'Contact Us', path: '/#contact-us' },
     ];
 
     const socialLinks = [
@@ -28,10 +28,9 @@ const Footer = () => {
                     {/* Column 1: About Us */}
                     <div>
                         <h4 className="text-xl font-semibold mb-4">ABOUT US</h4>
-                        <span className="text-2xl font-bold mb-3 block">Your Logo</span>
+                        <img src={logo} sizes='12' className='size-14 rounded-full mb-3' />
                         <p className="text-gray-400 text-sm mb-4">
-                            LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                            Born from a vision to create fragrances as unique as the individuals who wear them, we blend timeless elegance with modern sensibility. We invite you to discover a signature scent that resonates with your inner self and transforms ordinary days into extraordinary experiences.
                         </p>
                         <a href="#" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
                             LEARN MORE
@@ -77,7 +76,7 @@ const Footer = () => {
                                 className="w-full p-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
                             />
                             <button
-                                type="submit"
+                                // type="submit"
                                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition duration-200"
                             >
                                 SUBSCRIBE

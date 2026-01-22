@@ -14,11 +14,10 @@ const NavBar = ({ className, variant = "primary" }: NavBarProps) => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/about' },
+        { name: 'About Us', path: '/#about' },
         { name: 'Shop Online', path: '/shopping' },
-        // { name: 'Products', path: '/products' },
-        { name: 'Blog', path: '/blogs' },
-        { name: 'Contact Us', path: '/contact' },
+        { name: 'Blog', path: '/#blog-post' },
+        { name: 'Contact Us', path: '/#contact-us' },
     ];
 
     return (

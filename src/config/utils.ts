@@ -1,9 +1,9 @@
 import type { ProductSchema } from "@/lib/schema";
 
 const baseUrl = import.meta.env.VITE_PUBLIC_URL;
+const phoneNumber = import.meta.env.VITE_PUBLIC_PHONE;
 
 export const generateWhatsAppLink = (product: ProductSchema) => {
-    const phoneNumber = import.meta.env.VITE_PUBLIC_PHONE;
 
     const cleanBaseUrl = baseUrl.replace(/^https?:\/\//, '');
 
@@ -29,8 +29,6 @@ Please let me know the availability and delivery options!`;
 
 
 export const generateMultiProductWhatsAppLink = (selectedProducts: any[]) => {
-    const phoneNumber = import.meta.env.VITE_PUBLIC_PHONE;
-
     // 1. Calculate total considering quantity
     const total = selectedProducts.reduce((sum, item) => sum + (item.price * (item.qty || 1)), 0);
 
@@ -57,3 +55,24 @@ Please let me know the availability and delivery options!`;
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 };
+
+export const getIntouchWhatsappMsg = (data: any) => {
+        const cleanBaseUrl = baseUrl.replace(/^https?:\/\//, '');
+
+    const whatsappMessage = `*NEW FRAGRANCE INQUIRY*
+
+*Name:* ${data.name}
+*Email:* ${data.email}
+
+*Message:*
+"${data.description}"
+
+---
+_Sent via Lovence Sent Website_
+https://${cleanBaseUrl}
+`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+}

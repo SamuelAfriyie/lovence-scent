@@ -26,7 +26,7 @@ export const GenderItem = ({ genderFilter, onChange }: { genderFilter: any[], on
                 </div>
             </AccordionTrigger>
             <AccordionContent className="flex flex-row gap-4 text-balance" >
-                {genderFilter.map((gender: any) => (<Badge variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === gender?.name && "bg-accent/20")} onClick={() => handleSelect(gender?.name)}>{gender?.name}</Badge>))}
+                {genderFilter.map((gender: any) => (<Badge key={gender?.name} variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === gender?.name && "bg-accent/20")} onClick={() => handleSelect(gender?.name)}>{gender?.name}</Badge>))}
             </AccordionContent>
         </AccordionItem>
     )
@@ -54,7 +54,7 @@ export const BrandItem = ({ brandFilter, onChange }: { brandFilter: any[], onCha
                 </div>
             </AccordionTrigger>
             <AccordionContent className="flex flex-wrap gap-4 text-balance w-full" >
-                {brandFilter.map((brand: any) => (<Badge variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === brand && "bg-accent/20")} onClick={() => handleSelect(brand)}>{brand}</Badge>))}
+                {brandFilter.map((brand: any) => (<Badge key={brand} variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === brand && "bg-accent/20")} onClick={() => handleSelect(brand)}>{brand}</Badge>))}
             </AccordionContent>
         </AccordionItem>
     )
@@ -82,7 +82,7 @@ export const TypeItem = ({ typefilter, onChange }: { typefilter: any[], onChange
                 </div>
             </AccordionTrigger>
             <AccordionContent className="flex flex-wrap gap-4 text-balance w-full" >
-                {typefilter.map((type: any) => (<Badge variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === type && "bg-accent/20")} onClick={() => handleSelect(type)}>{type}</Badge>))}
+                {typefilter.map((type: any) => (<Badge key={type} variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === type && "bg-accent/20")} onClick={() => handleSelect(type)}>{type}</Badge>))}
             </AccordionContent>
         </AccordionItem>
     )

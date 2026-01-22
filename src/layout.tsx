@@ -4,6 +4,7 @@ import BottomNavigationBar from './components/bottom-nav-bar';
 import { useState, useEffect } from 'react';
 import { MdArrowUpward } from 'react-icons/md';
 import { cn } from './lib/utils';
+import ScrollToHash from './components/scroll-to-hash';
 
 function AppLayout() {
     const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +34,7 @@ function AppLayout() {
         <div className="min-h-screen relative">
             <div className='flex w-full justify-end lg:px-26 text-xs font-bold py-2 fixed top-0 z-50 bg-black'>
                 <span className='pr-2 text-white font-mono uppercase tracking-tighter'>
-                    CALL US TODAY! (+233) 059-198-3224
+                    CALL US TODAY! (+233) 053-994-3305
                 </span>
             </div>
 
@@ -49,7 +50,7 @@ function AppLayout() {
             >
                 <MdArrowUpward size={24} />
             </button>
-
+            <ScrollToHash />
             <BottomNavigationBar />
         </div>
     );
