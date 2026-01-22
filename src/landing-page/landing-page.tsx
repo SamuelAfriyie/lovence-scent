@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import PopularProductsSection from "../components/popular-product-section";
 import { useNavigationStoreListener } from "../lib/store/navigation-store";
+import ContactSection from "@/components/contact-us";
 
 const LandingPage = () => {
     const { isScrolled, setIsScrolled } = useNavigationStoreListener();
@@ -26,9 +27,16 @@ const LandingPage = () => {
         <main className="min-h-screen flex flex-col">
             <Header isScrolled={isScrolled} />
             <section className="grow pb-20 md:pb-0 bg-white">
-                <AboutUsSection />
+                <div className="w-full" id="about">
+                    <AboutUsSection />
+                </div>
                 <PopularProductsSection />
-                <BlogPostsSection />
+                <div className="w-full" id="blog-post">
+                    <BlogPostsSection />
+                </div>
+                <div className="w-full" id="contact-us">
+                    <ContactSection />
+                </div>
             </section>
             <footer>
                 <Footer />

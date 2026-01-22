@@ -24,11 +24,11 @@ const AboutUsSection = () => {
                         <h2 className="text-muted text-2xl font-bold uppercase mb-4">ABOUT US</h2>
 
                         {/* Subheading */}
-                        <h3 className="text-muted/80 text-xl font-semibold mb-4">LOREM IPSUM IS SIMPLY DUMMY TEXT</h3>
+                        <h3 className="text-muted/80 text-xl font-semibold mb-4 uppercase">Crafting Memories in Every Drop</h3>
 
                         {/* Body Paragraph */}
                         <p className="text-gray-600 leading-relaxed mb-6 font-light">
-                            Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            We believe that fragrance is more than a scent—it is an emotional experience that connects us to our past and shapes our identity. From our artisanal studio to your skin, each bottle is a masterful blend of rare ingredients and meticulous care, designed for those who appreciate refined, high-quality craftsmanship.
                         </p>
 
                         {/* Read More Button */}
