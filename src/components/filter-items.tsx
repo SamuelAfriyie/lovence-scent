@@ -87,3 +87,33 @@ export const TypeItem = ({ typefilter, onChange }: { typefilter: any[], onChange
         </AccordionItem>
     )
 }
+
+export const PriceItem = ({ priceFilter, onChange }: { priceFilter: any[], onChange: (value: any) => void }) => {
+
+    const [selected, setSelected] = useState<any>();
+
+    const handleSelect = (price: any) => {
+        onChange({ price: { min: price?.min ?? 0, max: price?.max ?? 0 } });
+        setSelected(price);
+    }
+
+    const handleClear = (e: any) => {
+        e.stopPropagation();
+        onChange({ price: { min: 0, max: 10000 } });
+        setSelected(undefined);
+    }
+
+    return (
+        <AccordionItem value="item-4">
+            <AccordionTrigger className="font-black text-lg hover:no-underline">
+                <div className="flex space-x-3 items-center cursor-pointer">
+                    <p>Price  <span className="text-xs">(GH₵)</span></p>
+                    <p className={cn("text-primary font-bold text-sm", selected === undefined && "hidden")} onClick={handleClear}>Clear</p>
+                </div>
+            </AccordionTrigger>
+            <AccordionContent className="flex flex-wrap gap-4 text-balance w-full">
+                {priceFilter.map((price) => (<Badge variant="outline" className={cn("text-[18px] rounded-none hover:underline cursor-pointer", selected === price && "bg-accent/20")} onClick={() => handleSelect(price)}>{price?.name}</Badge>))}
+            </AccordionContent>
+        </AccordionItem>
+    )
+}

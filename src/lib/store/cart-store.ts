@@ -12,6 +12,7 @@ type CartStoreAction = {
     setItem: (item: CartItem) => void,
     updateQty: (id: any, delta: any) => void,
     removeItem: (id: any) => void,
+    clearItems: () => void
 }
 
 type CartStoreListener = CartStore & CartStoreAction
@@ -48,7 +49,8 @@ export const createCartStoreListener = (
                 removeItem: (id: number) => set((prev) => ({
                     items: prev.items.filter(item => item.id !== id),
                     count: Math.abs((prev.count - (prev.items?.find((item) => item.id === id)?.qty ?? 0)))
-                }))
+                })),
+                clearItems: () => set((_) => ({ items: [], count: 0 }))
             }),
             {
                 name: 'cart-items'

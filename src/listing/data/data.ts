@@ -57,15 +57,21 @@ export const brandsFilter = [
 
 export const priceFilter = [
     {
-        id: 1, name: "Under 10",
+        id: 1, name: "Under 10",min:1, max: 10
     },
     {
-        id: 2, name: "10 - 20",
+        id: 2, name: "10 - 20", min: 10, max: 20
     },
     {
-        id: 3, name: "30 - 40",
+        id: 3, name: "30 - 40", min: 30, max: 40
     },
     {
-        id: 4, name: "50+",
-    }, 
+        id: 4, name: "50 - 60", min: 50, max: 60
+    },
+    {
+        id: 5, name: "70 - 80", min: 70, max: 80
+    },
+    {
+        id: 6, name: "90+", min: 90, max: 10000
+    },
 ]
