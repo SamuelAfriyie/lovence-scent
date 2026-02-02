@@ -5,15 +5,15 @@ import { cn } from '@/lib/utils';
 import { MdAdd, MdRemove, MdDeleteOutline, MdArrowBack } from 'react-icons/md';
 
 const CartPage = () => {
-    const { items, updateQty, removeItem } = useCartStoreListener();
+    const { items, updateQty, removeItem, clearItems } = useCartStoreListener();
     const navigate = useNavigate();
     const subtotal = items.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    const shipping = 50.00;
 
 
     const handleOrder = () => {
         const link = generateMultiProductWhatsAppLink(items);
         window.open(link, '_blank');
+        clearItems();
     }
 
     return (
@@ -70,7 +70,7 @@ const CartPage = () => {
 
                     {/* 2. ORDER SUMMARY (Right Side) */}
                     <div className="lg:col-span-4 self-start lg:sticky top-28">
-                        <OrderSummary subtotal={subtotal} shipping={shipping} onOrder={handleOrder} />
+                        <OrderSummary subtotal={subtotal} onOrder={handleOrder} />
                     </div>
                 </div>
             </div>
@@ -84,8 +84,8 @@ export default CartPage;
 import { MdShield, MdArrowForward } from 'react-icons/md';
 import { useNavigate } from 'react-router';
 
-const OrderSummary = ({ subtotal, shipping, onOrder }: any) => {
-    const total = subtotal + shipping;
+const OrderSummary = ({ subtotal, onOrder }: any) => {
+    const total = subtotal;
 
     return (
         <div className="sticky top-10">
@@ -98,10 +98,10 @@ const OrderSummary = ({ subtotal, shipping, onOrder }: any) => {
                         <span className="text-gray-500 font-medium">Subtotal</span>
                         <span className="font-bold text-gray-900">GH₵{subtotal.toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between items-center">
+                    {/* <div className="flex justify-between items-center">
                         <span className="text-gray-500 font-medium">Shipping & Handling</span>
                         <span className="font-bold text-gray-900">GH₵{shipping.toFixed(2)}</span>
-                    </div>
+                    </div> */}
                     <div className="flex justify-between items-center">
                         <span className="text-gray-500 font-medium">Estimated Tax</span>
                         <span className="font-bold text-gray-900">—</span>

@@ -15,7 +15,10 @@ const Listing = () => {
     const [criteria, setCritera] = useState({
         brand: "",
         gender: "",
-        maxPrice: 0,
+        price: {
+            min: 0,
+            max: 10000,
+        },
         type: ""
     })
 
@@ -25,7 +28,7 @@ const Listing = () => {
                 (!criteria.brand || product.brand === criteria.brand) &&
                 (!criteria.type || product.type === criteria.type) &&
                 (!criteria.gender || product.gender.includes(criteria.gender)) &&
-                (!criteria.maxPrice || product.price <= criteria.maxPrice)
+                ((product.price > criteria.price.min && product.price <= criteria.price.max))
             );
         });
     };
@@ -42,7 +45,7 @@ const Listing = () => {
         if (criteria.gender !== "") {
             count++;
         }
-        if (criteria.maxPrice > 0) {
+        if (criteria.price?.min > 0 || criteria.price?.max > 0) {
             count++;
         }
         if (criteria.type !== "") {
@@ -75,7 +78,7 @@ const Listing = () => {
                             <Filter brandsFilter={[...new Set(products.map((p) => p.brand))]} typesFilter={[...new Set(products.map((p) => p.type))]} onChange={handleFilterChange} />
                         </BottomSheet>
                     </div>
-                    <p className="dark:text-black">1-60 of 7072 Results</p>
+                    <p className="dark:text-black">{dummyProducts.length} Results</p>
                 </header>
                 <section className="flex w-full space-x-4 items-start">
                     <aside className="md:w-75 hidden md:inline-block lg:sticky lg:top-28 lg:self-start overflow-y-auto max-h-[calc(100vh-120px)]">
@@ -89,18 +92,22 @@ const Listing = () => {
                                 <FaList onClick={() => setViewMode('list')} className={cn("text-gray-400", viewMode === "list" && "text-gray-600")} />
                             </aside>
                         </div>
+                        <div className={cn("w-full justify-center items-center hidden", dummyProducts.length === 0 && 'flex min-h-52')}>
+                            <p className="text-xl text-accent">No item found</p>
+                        </div>
                         {
-                            viewMode === "grid" ? (<div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 mb-8">
-                                {dummyProducts.map((product) => (
-                                    <div key={product.id} className="break-inside-avoid">
-                                        <ProductCardV2
-                                            className="ring-inset shadow-lg rounded-sm"
-                                            viewMode={viewMode}
-                                            product={product}
-                                        />
-                                    </div>
-                                ))}
-                            </div>)
+                            viewMode === "grid" ? (
+                                <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 mb-8">
+                                    {dummyProducts.map((product) => (
+                                        <div key={product.id} className="break-inside-avoid">
+                                            <ProductCardV2
+                                                className="ring-inset shadow-lg rounded-sm"
+                                                viewMode={viewMode}
+                                                product={product}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>)
                                 : (
                                     <div className="flex flex-col gap-2 space-y-2 mb-8">
                                         {dummyProducts.map((product) => (
