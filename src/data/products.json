@@ -1,5 +1,96 @@
 [
     {
+        "id": 19,
+        "name": "Aventos Blue For Him",
+        "price": 160.00,
+        "imageUrl": "/images/products/aventus-blue.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "male"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 20,
+        "name": "Ramz Lattafa",
+        "price": 250.00,
+        "imageUrl": "/images/products/ramz-lattafa.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 21,
+        "name": "Royal Delight",
+        "price": 250.00,
+        "imageUrl": "/images/products/royal-delight.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 22,
+        "name": "Home Eau de Parfum Spray",
+        "price": 150.00,
+        "imageUrl": "/images/products/barakkat.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 23,
+        "name": "Proud Of You - Absolute",
+        "price": 150.00,
+        "imageUrl": "/images/products/proud-of-you-absolute.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 24,
+        "name": "Proud Of You - Amber",
+        "price": 150.00,
+        "imageUrl": "/images/products/proud-of-you-amber.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 25,
+        "name": "Suave 100ml",
+        "price": 150.00,
+        "imageUrl": "/images/products/suave.jpg",
+        "brand": "Lattafa",
+        "type": "Eau de Parfum",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
         "id": 1,
         "name": "GlowScents Oud Woody Scented Candle",
         "price": 50.00,
