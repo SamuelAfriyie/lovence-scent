@@ -17,7 +17,7 @@ const PopularProductsSection = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {dummyProducts.filter((p) => p.id <= 8).map((product) => (
+          {dummyProducts.filter((p) => p.id <= 9).map((product) => (
             <ProductCard
               key={product.id}
               product={product}

@@ -54,7 +54,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Visit Studio</p>
-                                <p className="text-navy font-bold">East Legon, Accra - Ghana</p>
+                                <p className="text-navy font-bold">Accra - Ghana</p>
                             </div>
                         </div>
                     </div>
