@@ -106,7 +106,7 @@
     {
         "id": 27,
         "name": "Veyes Essential Diffuser 150ml",
-        "price": 90.00,
+        "price": 100.00,
         "imageUrl": "/images/products/veyes-diffuser.jpg",
         "brand": "Veyes Diffuser",
         "type": "Diffuser",
@@ -342,19 +342,6 @@
         ],
         "discount": 0,
         "createdAt": "2024-05-20T15:00:00Z"
-    },
-    {
-        "id": 8,
-        "name": "Club De Nuit Intense Man Body Spray 200ml",
-        "price": 12.97,
-        "imageUrl": "/images/products/armaf-club-de-nuit-intense-man-body-spray-200ml.webp",
-        "brand": "Armaf",
-        "type": "Body Spray/Mist",
-        "gender": [
-            "male"
-        ],
-        "discount": 0,
-        "createdAt": "2024-01-21T02:08:00Z"
     },
     {
         "id": 9,
