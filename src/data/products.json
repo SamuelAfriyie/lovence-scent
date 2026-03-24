@@ -96,7 +96,7 @@
         "price": 90.00,
         "imageUrl": "/images/products/reed-diffuser.jpg",
         "brand": "Reed Diffuser",
-        "type": "Automatic Diffuser Kit",
+        "type": "Diffuser",
         "gender": [
             "unisex"
         ],
@@ -109,7 +109,7 @@
         "price": 90.00,
         "imageUrl": "/images/products/veyes-diffuser.jpg",
         "brand": "Veyes Diffuser",
-        "type": "Automatic Diffuser Kit",
+        "type": "Diffuser",
         "gender": [
             "unisex"
         ],
@@ -120,7 +120,7 @@
         "id": 28,
         "name": "UR WAY 50ml",
         "price": 50.00,
-        "imageUrl": "/images/products/ur-way.jpg",
+        "imageUrl": "/images/products/ur-way.jpeg",
         "brand": "Lattafa",
         "type": "Eau de Parfum",
         "gender": [
@@ -146,7 +146,7 @@
         "id": 30,
         "name": "Aventos Blue For Him",
         "price": 50.00,
-        "imageUrl": "/images/products/aventos.jpg",
+        "imageUrl": "/images/products/aventos.jpeg",
         "brand": "Lattafa",
         "type": "Eau de Parfum",
         "gender": [
@@ -159,7 +159,7 @@
         "id": 31,
         "name": "ASAD",
         "price": 350.00,
-        "imageUrl": "/images/products/asad.jpg",
+        "imageUrl": "/images/products/asad.jpeg",
         "brand": "Lattafa",
         "type": "Eau de Parfum",
         "gender": [
@@ -172,7 +172,7 @@
         "id": 32,
         "name": "Barakkat Rouge 540",
         "price": 50.00,
-        "imageUrl": "/images/products/barakat.jpg",
+        "imageUrl": "/images/products/barakat.webp",
         "brand": "Lattafa",
         "type": "Eau de Parfum",
         "gender": [
@@ -182,7 +182,7 @@
         "createdAt": "2024-05-20T15:00:00Z"
     },
     {
-        "id": 32,
+        "id": 33,
         "name": "Berries Weekend Pink Edition 50ml",
         "price": 50.00,
         "imageUrl": "/images/products/berries.jpg",
@@ -193,6 +193,58 @@
         ],
         "discount": 0,
         "createdAt": "2024-05-20T15:00:00Z"
+    },
+    {
+        "id": 34,
+        "name": "Loris - Orange",
+        "price": 90.00,
+        "imageUrl": "/images/products/loris-orange.jpg",
+        "brand": "Reed",
+        "type": "Diffuser",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2026-03-20T15:00:00Z"
+    },
+    {
+        "id": 35,
+        "name": "Nedens - Lemon",
+        "price": 90.00,
+        "imageUrl": "/images/products/nedens-lemon.jpg",
+        "brand": "Reed",
+        "type": "Diffuser",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2026-03-20T15:00:00Z"
+    },
+    {
+        "id": 36,
+        "name": "Loris - Citrus & Lavender",
+        "price": 90.00,
+        "imageUrl": "/images/products/loris-lavender.jpg",
+        "brand": "Reed",
+        "type": "Diffuser",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2026-03-20T15:00:00Z"
+    },
+    {
+        "id": 37,
+        "name": "Loris - Patchouli & Bergamot",
+        "price": 90.00,
+        "imageUrl": "/images/products/loris-patchouli.jpg",
+        "brand": "Reed",
+        "type": "Diffuser",
+        "gender": [
+            "unisex"
+        ],
+        "discount": 0,
+        "createdAt": "2026-03-20T15:00:00Z"
     },
     {
         "id": 1,
